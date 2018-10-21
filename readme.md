@@ -19,9 +19,11 @@ git clone https://github.com/filippVasin/allmax.git
 cd allmax
 
 cp .env.example .env
+
+php artisan key:generate
 ```
 
-Прописываем доступы к БД в файле .env
+Прописываем доступы к БД в файле .env и заканчиваем установку
 
 ```
 composer install
@@ -29,5 +31,7 @@ composer install
 php artisan migrate
 
 php artisan db:seed
+
+php artisan cache:clear
 
 ```
