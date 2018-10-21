@@ -10,32 +10,34 @@
                                                 justify-content: space-between;">
                 <input type="text"  name="title" required placeholder="Задача" value="{{ $task['title'] }}">
                 <div class="box">
-
-                    <select name="priority_id">
-                        @if($priorities)
-                            <option value="0">Выберите приоритет</option>
-                            @foreach($priorities as $priority)
-                                @if($task->priority['id'] == $priority['id'] )
-                                    <option value = "{{ $priority['id'] }}"  selected>{{ $priority['name'] }}</option>
-                                @else
-                                    <option value = "{{ $priority['id'] }}">{{ $priority['name'] }}</option>
-                                @endif
-                            @endforeach
-                        @endif
-                    </select>
-
-                    <select name="status_id">
-                        @if($statuses)
-                            <option value="0">Выберите статус</option>
-                            @foreach($statuses as $status)
-                                @if($task->status['id'] == $status['id'] )
-                                    <option value = "{{ $status['id'] }}"  selected>{{ $status['name'] }}</option>
-                                @else
-                                    <option value = "{{ $status['id'] }}">{{ $status['name'] }}</option>
-                                @endif
-                            @endforeach
-                        @endif
-                    </select>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Выберите приоритет</label>
+                        <select name="priority_id">
+                            @if($priorities)
+                                @foreach($priorities as $priority)
+                                    @if($task->priority['id'] == $priority['id'] )
+                                        <option value = "{{ $priority['id'] }}"  selected>{{ $priority['name'] }}</option>
+                                    @else
+                                        <option value = "{{ $priority['id'] }}">{{ $priority['name'] }}</option>
+                                    @endif
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Выберите статус</label>
+                        <select name="status_id">
+                            @if($statuses)
+                                @foreach($statuses as $status)
+                                    @if($task->status['id'] == $status['id'] )
+                                        <option value = "{{ $status['id'] }}"  selected>{{ $status['name'] }}</option>
+                                    @else
+                                        <option value = "{{ $status['id'] }}">{{ $status['name'] }}</option>
+                                    @endif
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
 
 
                 </div>
